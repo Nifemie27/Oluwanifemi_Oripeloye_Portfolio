@@ -85,7 +85,10 @@ function initNavbarScrollState() {
     navbar.classList.toggle("scrolled", window.scrollY > 12);
   };
 
-  updateState();
+  // The page always loads at scrollY 0, so the unscrolled state already
+  // matches the default markup — defer this read to the next frame
+  // instead of forcing the page's first layout pass synchronously here.
+  requestAnimationFrame(updateState);
   window.addEventListener("scroll", updateState, { passive: true });
 }
 
@@ -103,7 +106,9 @@ function initScrollProgress() {
     bar.style.width = `${progress}%`;
   };
 
-  updateProgress();
+  // Reading scrollHeight forces a synchronous layout — defer the initial
+  // measurement to the next frame so it doesn't block first paint.
+  requestAnimationFrame(updateProgress);
   window.addEventListener("scroll", updateProgress, { passive: true });
   window.addEventListener("resize", updateProgress);
 }
@@ -175,7 +180,7 @@ function initBackToTop() {
     button.classList.toggle("visible", window.scrollY > 480);
   };
 
-  toggleVisibility();
+  requestAnimationFrame(toggleVisibility);
   window.addEventListener("scroll", toggleVisibility, { passive: true });
 
   button.addEventListener("click", () => {
