@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Oluwanifemi Oripeloye | Software Engineer &amp; Cloud Engineering Intern</title>
+  <meta name="description" content="Portfolio of Oluwanifemi Oripeloye — a Software Engineer and Cloud Engineering Intern building AI-powered web apps and AWS-based cloud infrastructure. MSc Applied Computing, University of Sunderland, UK." />
+  <meta name="keywords" content="Oluwanifemi Oripeloye, Software Engineer, Cloud Engineer, AWS, React, JavaScript Developer, Portfolio, Nifemie27" />
+  <meta name="author" content="Oluwanifemi Oripeloye" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Oluwanifemi Oripeloye | Software Engineer &amp; Cloud Engineering Intern" />
+  <meta property="og:description" content="AI-powered web apps and AWS-based cloud infrastructure — explore projects, skills, and background." />
+  <meta property="og:image" content="images/og-image.png" />
+
+  <!-- Favicon (inline SVG, no external file required) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%2338BDF8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Arial,Helvetica,sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Primary navigation">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo" aria-label="Oluwanifemi Oripeloye — home">
+          <span class="logo-mark">OO</span>
+          <span class="logo-text">Nifemi</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active-link" data-nav>Home</a></li>
+          <li><a href="#about" class="nav-link" data-nav>About</a></li>
+          <li><a href="#skills" class="nav-link" data-nav>Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
+          <li><a href="#certifications" class="nav-link" data-nav>Certifications</a></li>
+          <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light theme" aria-pressed="false">
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+
+          <button class="hamburger" id="hamburger" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-text reveal">
+          <p class="hero-eyebrow">Hello, I'm</p>
+          <h1 class="hero-name">Oluwanifemi Oripeloye</h1>
+          <h2 class="hero-role">
+            <span id="typingText" aria-live="polite">Software Engineer</span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="hero-summary">
+            MSc Applied Computing student at the University of Sunderland, UK, with a strong interest in
+            <strong>AI</strong>, <strong>software engineering</strong>, and <strong>cloud engineering</strong>.
+            I build reliable, user-focused applications and enjoy turning cloud infrastructure into
+            scalable, real-world solutions.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View My Work
+              <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="avatar-ring">
+            <div class="avatar-placeholder">
+              <span>OO</span>
+            </div>
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <span class="scroll-mouse"><span class="scroll-dot"></span></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <p class="section-eyebrow reveal">Get to know me</p>
+        <h2 class="section-title reveal" id="about-heading">About Me</h2>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a Software Engineer and Cloud Engineering Intern currently completing an
+              <strong>MSc in Applied Computing</strong> at the University of Sunderland, UK.
+              My work sits at the intersection of <strong>artificial intelligence</strong>,
+              <strong>full-stack software engineering</strong>, and <strong>cloud infrastructure</strong> —
+              I like building products end-to-end, from the interface a user touches to the servers
+              that keep it running.
+            </p>
+            <p>
+              Recently, that's meant shipping an AI-powered weather app, architecting a three-tier
+              transaction tracker on AWS, and contributing to an in-progress school management system.
+              I care about writing clean, maintainable code and I'm a continuous learner — always
+              exploring new tools in AI and cloud engineering and applying them to practical problems.
+            </p>
+
+            <ul class="about-facts">
+              <li><span class="fact-label">Education</span><span class="fact-value">MSc Applied Computing, University of Sunderland, UK</span></li>
+              <li><span class="fact-label">Location</span><span class="fact-value">United Kingdom</span></li>
+              <li><span class="fact-label">Focus</span><span class="fact-value">AI · Software Engineering · Cloud Engineering</span></li>
+            </ul>
+          </div>
+
+          <div class="about-highlights">
+            <article class="highlight-card reveal">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M9 21h6"/></svg>
+              </div>
+              <h3>Artificial Intelligence</h3>
+              <p>Integrating AI APIs like Google Gemini to build smarter, more personalized applications.</p>
+            </article>
+
+            <article class="highlight-card reveal">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3l-6 9 6 9M16 3l6 9-6 9"/></svg>
+              </div>
+              <h3>Software Engineering</h3>
+              <p>Designing and building responsive, maintainable full-stack web applications.</p>
+            </article>
+
+            <article class="highlight-card reveal">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </div>
+              <h3>Cloud Engineering</h3>
+              <p>Architecting scalable cloud-native systems on AWS — EC2, S3, RDS, and Auto Scaling.</p>
+            </article>
+
+            <article class="highlight-card reveal">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/></svg>
+              </div>
+              <h3>Continuous Learning</h3>
+              <p>Constantly picking up new tools and technologies to stay effective and adaptable.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <p class="section-eyebrow reveal">What I work with</p>
+        <h2 class="section-title reveal" id="skills-heading">Skills</h2>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Programming Languages</h3>
+            <div class="pill-group">
+              <span class="pill">JavaScript (ES6+)</span>
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">SQL</span>
+              <span class="pill">Shell Scripting</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Frontend</h3>
+            <div class="pill-group">
+              <span class="pill">React</span>
+              <span class="pill">Responsive Design</span>
+              <span class="pill">Flexbox / Grid</span>
+              <span class="pill">Accessibility (a11y)</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Backend</h3>
+            <div class="pill-group">
+              <span class="pill">Node.js</span>
+              <span class="pill">Express.js</span>
+              <span class="pill">REST APIs</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Databases</h3>
+            <div class="pill-group">
+              <span class="pill">MySQL</span>
+              <span class="pill">Amazon RDS</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Cloud &amp; DevOps</h3>
+            <div class="pill-group">
+              <span class="pill">AWS EC2</span>
+              <span class="pill">AWS S3</span>
+              <span class="pill">AWS RDS</span>
+              <span class="pill">Auto Scaling</span>
+              <span class="pill">Vercel</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Tools &amp; Version Control</h3>
+            <div class="pill-group">
+              <span class="pill">Git</span>
+              <span class="pill">GitHub</span>
+              <span class="pill">VS Code</span>
+              <span class="pill">npm</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">AI &amp; APIs</h3>
+            <div class="pill-group">
+              <span class="pill">Google Gemini API</span>
+              <span class="pill">OpenWeather API</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3 class="skill-card-title">Soft Skills</h3>
+            <div class="pill-group">
+              <span class="pill">Problem Solving</span>
+              <span class="pill">Communication</span>
+              <span class="pill">Team Collaboration</span>
+              <span class="pill">Adaptability</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <p class="section-eyebrow reveal">Selected work</p>
+        <h2 class="section-title reveal" id="projects-heading">Projects</h2>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Weda AI -->
+          <article class="project-card reveal">
+            <div class="project-card-top">
+              <span class="project-tag">AI · Weather</span>
+              <h3 class="project-title">Wéda AI</h3>
+              <p class="project-desc">
+                An AI-powered weather application that delivers real-time forecasts and personalized
+                travel insights based on user-selected destinations. Combines live weather data with
+                AI-generated recommendations to help users plan trips, choose appropriate clothing, and
+                prepare for changing conditions.
+              </p>
+
+              <ul class="project-features">
+                <li>Real-time weather forecasts via OpenWeather API</li>
+                <li>AI-generated travel &amp; clothing recommendations</li>
+                <li>Destination-based trip planning</li>
+                <li>Responsive, intuitive interface</li>
+              </ul>
+
+              <div class="pill-group">
+                <span class="pill pill-sm">HTML5</span>
+                <span class="pill pill-sm">CSS3</span>
+                <span class="pill pill-sm">JavaScript (ES6+)</span>
+                <span class="pill pill-sm">OpenWeather API</span>
+                <span class="pill pill-sm">Google Gemini API</span>
+                <span class="pill pill-sm">Vercel</span>
+              </div>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://github.com/Nifemie27/Weda-AI" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+              <a href="https://weda-ai.vercel.app" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                Live Demo
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: PocketLedger -->
+          <article class="project-card reveal">
+            <div class="project-card-top">
+              <span class="project-tag">Cloud Engineering</span>
+              <h3 class="project-title">PocketLedger</h3>
+              <p class="project-desc">
+                A transaction tracker built for Nigerian market traders, developed during a Cloud
+                Engineering internship and deployed on AWS with a scalable, cloud-native three-tier
+                architecture.
+              </p>
+
+              <ul class="project-features">
+                <li>Architecture: React (S3) → Express API (EC2 + Auto Scaling) → MySQL (RDS)</li>
+                <li>Auto-scaling backend for high availability</li>
+                <li>Cloud-native, production-style AWS deployment</li>
+                <li>Transaction tracking tailored to market traders</li>
+              </ul>
+
+              <div class="pill-group">
+                <span class="pill pill-sm">React</span>
+                <span class="pill pill-sm">Express.js</span>
+                <span class="pill pill-sm">MySQL</span>
+                <span class="pill pill-sm">AWS S3</span>
+                <span class="pill pill-sm">AWS EC2</span>
+                <span class="pill pill-sm">Auto Scaling</span>
+                <span class="pill pill-sm">AWS RDS</span>
+                <span class="pill pill-sm">Shell</span>
+              </div>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://github.com/Nifemie27/pocketledger-app-aws-deployed" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: School Management System -->
+          <article class="project-card reveal">
+            <div class="project-card-top">
+              <div class="project-badges">
+                <span class="project-tag">Software Engineering</span>
+                <span class="status-badge status-progress">In Progress</span>
+              </div>
+              <h3 class="project-title">School Management System</h3>
+              <p class="project-desc">
+                A comprehensive school management system currently in active development, designed to
+                streamline student records, attendance, and administrative workflows. Repository is
+                private while development is ongoing.
+              </p>
+
+              <ul class="project-features">
+                <li>Student record &amp; attendance management</li>
+                <li>Administrative workflow tooling</li>
+                <li>Full tech stack and case study to be published on completion</li>
+              </ul>
+            </div>
+
+            <div class="project-card-actions">
+              <span class="btn btn-outline btn-disabled" aria-disabled="true">
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Private Repository
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS ===================== -->
+    <section class="section section-alt" id="certifications" aria-labelledby="certifications-heading">
+      <div class="container">
+        <p class="section-eyebrow reveal">Always learning</p>
+        <h2 class="section-title reveal" id="certifications-heading">Certifications &amp; Achievements</h2>
+
+        <!-- Placeholder cards — replace with real certifications as they're earned -->
+        <div class="cert-grid">
+          <article class="cert-card cert-placeholder reveal">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+            </div>
+            <h3>Certification Title</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <p class="cert-date">Add date</p>
+          </article>
+
+          <article class="cert-card cert-placeholder reveal">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+            </div>
+            <h3>Certification Title</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <p class="cert-date">Add date</p>
+          </article>
+
+          <article class="cert-card cert-placeholder reveal">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+            </div>
+            <h3>Certification Title</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <p class="cert-date">Add date</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <p class="section-eyebrow reveal">Let's connect</p>
+        <h2 class="section-title reveal" id="contact-heading">Get In Touch</h2>
+        <p class="section-subtitle reveal">
+          I'm open to internship and graduate software/cloud engineering opportunities — feel free to reach out.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <a class="contact-item" href="mailto:oluwanifemioripeloye@gmail.com">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </span>
+              <span>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">oluwanifemioripeloye@gmail.com</span>
+              </span>
+            </a>
+
+            <a class="contact-item" href="https://www.linkedin.com/in/oluwanifemi-oripeloye-7264a4136/" target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </span>
+              <span>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">oluwanifemi-oripeloye</span>
+              </span>
+            </a>
+
+            <a class="contact-item" href="https://github.com/Nifemie27" target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </span>
+              <span>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">Nifemie27</span>
+              </span>
+            </a>
+
+            <div class="contact-item contact-item-static">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">United Kingdom</span>
+              </span>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="nameError" />
+              <span class="form-error" id="nameError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="emailError" />
+              <span class="form-error" id="emailError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-describedby="messageError"></textarea>
+              <span class="form-error" id="messageError" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Send Message
+              <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </button>
+
+            <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <a href="#home" class="nav-logo" aria-label="Oluwanifemi Oripeloye — home">
+        <span class="logo-mark">OO</span>
+        <span class="logo-text">Nifemi</span>
+      </a>
+
+      <div class="footer-socials">
+        <a href="https://github.com/Nifemie27" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/oluwanifemi-oripeloye-7264a4136/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:oluwanifemioripeloye@gmail.com" aria-label="Send an email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </a>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Oluwanifemi Oripeloye. Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
