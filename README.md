@@ -2,8 +2,8 @@
 
 A modern, responsive personal portfolio built with plain **HTML5, CSS3, and vanilla JavaScript** — no frameworks, no build step. Showcases my background as a Software Engineer and Cloud Engineering Intern (MSc Applied Computing, University of Sunderland, UK), along with my skills, projects, and contact details.
 
-**Live site:** _add your deployed URL here_
-**Repository:** _add your GitHub repository URL here_
+**Live site:** [oluwanifemi-oripeloye-portfolio.vercel.app](https://oluwanifemi-oripeloye-portfolio.vercel.app)
+**Repository:** [github.com/Nifemie27/Oluwanifemi_Oripeloye_Portfolio](https://github.com/Nifemie27/Oluwanifemi_Oripeloye_Portfolio)
 
 ---
 
