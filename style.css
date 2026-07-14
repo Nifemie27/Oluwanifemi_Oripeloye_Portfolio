@@ -1076,6 +1076,15 @@ a.contact-item:hover {
   gap: 8px;
 }
 
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .form-group label {
   font-size: 0.88rem;
   font-weight: 600;
@@ -1115,6 +1124,10 @@ a.contact-item:hover {
   color: var(--color-success);
   text-align: center;
   min-height: 1.2em;
+}
+
+.form-success.is-error {
+  color: var(--color-error);
 }
 
 /* ==========================================================================

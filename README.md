@@ -11,7 +11,7 @@ A modern, responsive personal portfolio built with plain **HTML5, CSS3, and vani
 
 This is my personal developer portfolio — a single-page site that introduces who I am, what I work on, and how to get in touch. It's built to act as a professional digital identity I can share with recruiters, collaborators, and clients.
 
-It includes a hero introduction, an About Me section, a categorized Skills grid, real project case studies, a certifications section, and a validated contact form — all wrapped in a dark/light themeable design system with scroll animations.
+It includes a hero introduction, an About Me section, a categorized Skills grid, real project case studies, and a contact form that sends real email — all wrapped in a dark/light themeable design system with scroll animations.
 
 ## Features
 
@@ -25,8 +25,7 @@ It includes a hero introduction, an About Me section, a categorized Skills grid,
   - [Wéda AI](https://weda-ai.vercel.app) — AI-powered weather & travel insights app
   - PocketLedger — AWS-deployed transaction tracker (cloud engineering internship project)
   - School Management System — in-progress, private repository
-- **Certifications** section with editable placeholder cards
-- **Contact form** with client-side validation (required fields, email format, minimum message length) and an accessible success message
+- **Contact form** with client-side validation, a spam honeypot, and real email delivery via a serverless SMTP endpoint
 - **Back-to-top button**, social links, and a clean footer
 - Fully **responsive** (mobile, tablet, laptop, desktop) with no horizontal scrolling
 - **Accessible**: semantic landmarks, skip link, visible focus states, `aria-*` attributes, keyboard-operable navigation and menu
@@ -38,21 +37,26 @@ It includes a hero introduction, an About Me section, a categorized Skills grid,
 | Markup     | HTML5 (semantic elements)          |
 | Styling    | CSS3 (custom properties, Flexbox, Grid, animations) |
 | Behavior   | Vanilla JavaScript (ES6+, no dependencies) |
+| Contact form backend | Node.js serverless function on Vercel (`api/contact.js`) using [Nodemailer](https://nodemailer.com/) over SMTP |
 | Fonts      | Google Fonts — Space Grotesk & Inter |
-| Deployment | Vercel / Netlify / GitHub Pages (static hosting) |
+| Deployment | Vercel (static frontend + serverless function) |
 
-No build tools, bundlers, or frameworks are required — the site runs directly in the browser.
+The frontend itself is plain static HTML/CSS/JS — no build step. The only Node dependency (`nodemailer`) powers the single serverless function that sends contact-form email.
 
 ## Folder Structure
 
 ```
 My Portfolio/
-├── index.html      # Page markup and structure
-├── style.css        # Design system + responsive layout + animations
+├── index.html        # Page markup and structure
+├── style.css         # Design system + responsive layout + animations
 ├── script.js         # All interactive behavior (theme, nav, form, etc.)
+├── api/
+│   └── contact.js    # Serverless function: validates + emails contact form submissions
+├── package.json       # Declares the nodemailer dependency for api/contact.js
+├── .gitignore
 ├── README.md
-├── images/           # Add project screenshots, OG image, etc. here
-└── assets/           # Additional static assets (icons, downloads, etc.)
+├── images/            # Add project screenshots, OG image, etc. here
+└── assets/            # Additional static assets (icons, downloads, etc.)
 ```
 
 ## Installation / Running Locally
@@ -74,32 +78,52 @@ No dependencies to install. Either:
 
 ## Deployment
 
-The project is a static site and deploys with zero configuration.
+The frontend deploys with zero configuration; the contact form additionally needs SMTP environment variables set on whatever platform runs `api/contact.js`.
 
-**Vercel**
+**Vercel** (recommended — used for the live site)
 ```bash
 npm install -g vercel
 vercel
 ```
-Or connect the GitHub repository directly at [vercel.com](https://vercel.com/) — no build command or output directory needs to be set.
+Or connect the GitHub repository directly at [vercel.com](https://vercel.com/). Vercel auto-detects the `api/` directory as a serverless function and installs `nodemailer` from `package.json` — no build command or output directory needs to be set.
 
-**Netlify** — drag and drop the project folder at [app.netlify.com/drop](https://app.netlify.com/drop), or connect the repository.
+**Netlify / GitHub Pages** — these only serve static files, so `api/contact.js` won't run as-is. The frontend (everything except the contact form's email delivery) still works if deployed there; porting `api/contact.js` to a Netlify Function would be needed for the form to send mail.
 
-**GitHub Pages** — push to a repository and enable Pages on the `main` branch in repository settings.
+## Contact Form / Email Setup
+
+The contact form posts to `api/contact.js`, which sends the message via SMTP using [Nodemailer](https://nodemailer.com/). No credentials are stored in the repo — they're read from environment variables at runtime.
+
+**1. Set these environment variables** in the Vercel project (Project → Settings → Environment Variables):
+
+| Variable | Description | Example |
+|---|---|---|
+| `SMTP_HOST` | Your SMTP provider's host | `smtp.gmail.com` |
+| `SMTP_PORT` | SMTP port | `587` (STARTTLS) or `465` (SSL) |
+| `SMTP_USER` | SMTP account username (usually your email address) | `you@gmail.com` |
+| `SMTP_PASS` | SMTP account password or app password | *(app password, not your regular password)* |
+| `CONTACT_TO_EMAIL` | Where form submissions get delivered | `oluwanifemioripeloye@gmail.com` |
+
+**Using Gmail:** enable 2-Step Verification on the account, then create an [App Password](https://myaccount.google.com/apppasswords) — use that 16-character value as `SMTP_PASS`, not your normal Gmail password. Use `smtp.gmail.com` / port `587` for `SMTP_HOST` / `SMTP_PORT`.
+
+Any other SMTP provider (Outlook, Zoho, Resend, Brevo, SendGrid, etc.) works the same way — just use that provider's host, port, and credentials.
+
+**2. Redeploy** after adding the variables so the function picks them up.
+
+**3. Local testing** (optional): create a `.env` file (already gitignored) with the same variables and run `vercel dev`, which serves both the static site and the `api/` function together.
+
+The endpoint also validates input server-side and includes a hidden honeypot field to reject basic bot spam before it ever reaches the SMTP call.
 
 ## Customization
 
 - **Colors / theme**: edit the CSS custom properties at the top of `style.css` (`:root` for dark theme, `:root[data-theme="light"]` for light theme).
 - **Fonts**: update the Google Fonts `<link>` in `index.html` and the `--font-heading` / `--font-body` variables in `style.css`.
-- **Content**: all text lives directly in `index.html` — sections are clearly commented (Hero, About, Skills, Projects, Certifications, Contact, Footer).
-- **Certifications**: replace the placeholder cards in the `#certifications` section with real entries as they're earned.
-- **Contact form**: currently validates client-side and shows a simulated success message. To actually deliver messages, wire the `fetch` call of your choice (e.g. [Formspree](https://formspree.io/) or [EmailJS](https://www.emailjs.com/)) into the submit handler in `script.js` (`initContactForm`).
+- **Content**: all text lives directly in `index.html` — sections are clearly commented (Hero, About, Skills, Projects, Contact, Footer).
+- **Contact form**: validates client-side and server-side, then emails the submission via `api/contact.js`. See [Contact Form / Email Setup](#contact-form--email-setup) above.
 
 ## Future Improvements
 
-- Wire the contact form to a real email delivery service
 - Add real project screenshots to `images/`
-- Populate the Certifications section as credentials are earned
+- Re-add a Certifications section as credentials are earned
 - Add a blog/writing section
 - Add unit tests for form validation logic
 

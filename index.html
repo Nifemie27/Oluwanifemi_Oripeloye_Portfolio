@@ -441,6 +441,12 @@
           </div>
 
           <form class="contact-form reveal" id="contactForm" novalidate>
+            <!-- Honeypot field: hidden from real users via CSS, catches basic bots -->
+            <div class="form-group form-honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="nameError" />

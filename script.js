@@ -308,7 +308,7 @@ function initContactForm() {
     });
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const isValid = Object.keys(fields)
@@ -320,11 +320,43 @@ function initContactForm() {
       return;
     }
 
-    // Static site: no backend wired up. Swap this block for a real request
-    // (e.g. Formspree, EmailJS) when connecting the form to email delivery.
-    successEl.textContent = `Thanks, ${fields.name.input.value.trim()}! Your message has been received — I'll get back to you soon.`;
-    form.reset();
-    Object.keys(fields).forEach((key) => setError(fields[key], ""));
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalLabel = submitButton.innerHTML;
+    const nameValue = fields.name.input.value.trim();
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+    successEl.classList.remove("is-error");
+    successEl.textContent = "";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nameValue,
+          email: fields.email.input.value.trim(),
+          message: fields.message.input.value.trim(),
+          website: form.querySelector("#website").value,
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      successEl.textContent = `Thanks, ${nameValue}! Your message has been sent — I'll get back to you soon.`;
+      form.reset();
+      Object.keys(fields).forEach((key) => setError(fields[key], ""));
+    } catch (error) {
+      successEl.classList.add("is-error");
+      successEl.textContent = error.message || "Something went wrong. Please try again.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalLabel;
+    }
   });
 }
 

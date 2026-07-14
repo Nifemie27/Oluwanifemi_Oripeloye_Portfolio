@@ -1,0 +1,9 @@
+{
+  "name": "oluwanifemi-oripeloye-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal developer portfolio with a serverless contact form endpoint.",
+  "dependencies": {
+    "nodemailer": "^9.0.3"
+  }
+}
