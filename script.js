@@ -337,7 +337,7 @@ function initContactForm() {
           name: nameValue,
           email: fields.email.input.value.trim(),
           message: fields.message.input.value.trim(),
-          website: form.querySelector("#website").value,
+          website: form.querySelector("#website")?.value ?? "",
         }),
       });
 
