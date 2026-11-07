@@ -24,7 +24,7 @@ It includes a hero introduction, an About Me section, a categorized Skills grid,
 - **Projects** section featuring real work:
   - [Wéda AI](https://weda-ai.vercel.app) — AI-powered weather & travel insights app
   - PocketLedger — AWS-deployed transaction tracker (cloud engineering internship project)
-  - School Management System — in-progress, private repository
+  - [Geniusis](https://geniusis.app) — multi-tenant SaaS school management platform for African schools
 - **Contact form** with client-side validation, a spam honeypot, and real email delivery via a serverless SMTP endpoint
 - **Back-to-top button**, social links, and a clean footer
 - Fully **responsive** (mobile, tablet, laptop, desktop) with no horizontal scrolling
